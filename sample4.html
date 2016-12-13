@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Kronos.js</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    $("#show-btn").click(function(){
+      $(".red").css("backgroundColor", "red").css("color", "#ddd");
+      $(".yellow").css("backgroundColor", "yellow").css("color", "#666");
+    })
+  });
+  </script>
+</head>
+<body>
+  <h1 class="red">Sample 4</h1>
+  <button type="button" id="show-btn">show</button>
+  <ul>
+    <li class="red">Apple</li>
+    <li class="yellow">Banana</li>
+    <li class="red">Cherry</li>
+  </ul>
+</body>
+</html>

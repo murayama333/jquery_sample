@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Kronos.js</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    $("#show-btn").click(function(){
+      $.getJSON("/api/fruits.json")
+        .done(function(fruits){
+          var $table = $("<table>");
+          for (var i = 0; i < fruits.length; i++) {
+            var $tr = $("<tr>");
+
+            var $td1 = $("<td>").text(fruits[i].id);
+            var $td2 = $("<td>").text(fruits[i].name);
+            var $td3 = $("<td>").text(fruits[i].price);
+
+            $tr.append($td1).append($td2).append($td3);
+            $table.append($tr);
+          }
+          $("#fruits-panel").append($table);
+        }).fail(function(jqxhr, textStatus, error){
+          var err = textStatus + ", " + error;
+          console.log("Request Failed: " + err);
+        });
+    })
+  });
+  </script>
+</head>
+<body>
+  <h1 class="red">Sample 7</h1>
+  <button type="button" id="show-btn">show</button>
+  <div id="fruits-panel">kronos.js</div>
+</body>
+</html>

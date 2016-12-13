@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Kronos.js</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    $(".status").click(function(e){
+      var fruits = ["apple", "banana", "cherry"];
+
+      var $ul = $("<ul>");
+      for (var i = 0; i < fruits.length; i++) {
+        // $ul.append($("<li>").text(fruits[i]));
+        var $li = $("<li>");
+        $li.text(fruits[i]);
+        $ul.append($li);
+      }
+      $(".status").append($ul);
+    })
+  });
+  </script>
+</head>
+<body>
+  <h1>Sample 2</h1>
+  <div class="status">kronos.js</div>
+</body>
+</html>
